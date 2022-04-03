@@ -60,9 +60,11 @@ const List = () => {
           </TableHead>
           <TableBody>
             {loading && (
-              <TableCell colspan={3} align="center">
-                <CircularProgress/>
-              </TableCell>
+              <TableRow>
+                <TableCell colSpan={3} align="center">
+                  <CircularProgress/>
+                </TableCell>
+              </TableRow>
             )}
             {!loading && (
               pokemons.map((pokemon, index) => <ListItem key={index} {...pokemon} />)
